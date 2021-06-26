@@ -86,13 +86,12 @@ O response body serâ:
 
 [Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
 
-[Maven](https://maven.apache.org/)
+[Kotlin](https://kotlinlang.org/)
 
-[Spring Tools 4 for Eclipse](https://spring.io/tools) 
+[Gradle](https://gradle.org/)
 
 [IntelliJ](https://www.jetbrains.com/pt-br/idea/)
 
-[Eclipse - Java Code Coverage](https://www.eclemma.org/)
 
 # Instalação OS X & Linux:
 
@@ -103,9 +102,6 @@ O response body serâ:
 sdk i java 11.0.2-open
 ```
 
-**Maven**
-
-[Instalação Maven](https://maven.apache.org/install.html)
 
 
 # Execução e Compilação
@@ -116,13 +112,13 @@ Acessar a pasta raiz do projeto:
 
 ```sh
 sdk use java 11.0.2-open
-mvn clean package
+grade 
 ```
 
 **Execução**
 
 ```sh
-java -jar target/passcheck-0.0.1-SNAPSHOT.jar
+java -jar target/wordcheck-0.0.1-SNAPSHOT.jar
 ```
 
 **Testes do enpoint**
