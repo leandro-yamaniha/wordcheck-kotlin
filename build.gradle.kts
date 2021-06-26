@@ -5,11 +5,14 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.5.20"
 	kotlin("plugin.spring") version "1.5.20"
+	jacoco
+	id("org.sonarqube") version "3.2.0"
 }
+
 
 group = "com.lsy"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_16
+java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
@@ -25,6 +28,15 @@ dependencies {
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
+
+
+jacoco {
+	toolVersion = "0.8.7"
+	reportsDirectory.set(layout.buildDirectory.dir("customJacocoReportDir"))
+}
+
+
+
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
@@ -35,3 +47,33 @@ tasks.withType<KotlinCompile> {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.jacocoTestReport {
+	reports {
+		xml.required.set(true)
+		csv.required.set(true)
+		html.outputLocation.set(layout.buildDirectory.dir("jacocoHtml"))
+	}
+}
+
+
+tasks.test {
+	finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
+}
+tasks.jacocoTestReport {
+	dependsOn(tasks.test) // tests are required to run before generating the report
+}
+
+
+
+tasks.jacocoTestCoverageVerification {
+	dependsOn(tasks.test)
+	violationRules {
+		rule {
+			limit {
+				minimum = "0.90".toBigDecimal()
+			}
+		}
+	}
+}
+
