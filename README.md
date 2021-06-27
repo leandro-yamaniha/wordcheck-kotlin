@@ -112,16 +112,16 @@ Acessar a pasta raiz do projeto:
 
 ```sh
 sdk use java 11.0.2-open
-grade 
+./gradlew clean build 
 ```
 
 **Execução**
 
 ```sh
-java -jar target/wordcheck-0.0.1-SNAPSHOT.jar
+java -jar build/lib/wordcheck-0.0.1-SNAPSHOT.jar
 ```
 
-**Testes do enpoint**
+**Testes do endpoint**
 
 Podem ser realizados os testes de 2 formas:
 - Como o projeto implementa o uso de openapi, é gerado um front para testes no endpoint via swagger ui, que é acessado por : http://localhost:8080/swagger-ui.html
