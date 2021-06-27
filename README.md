@@ -118,7 +118,7 @@ sdk use java 11.0.2-open
 **Execução**
 
 ```sh
-java -jar build/lib/wordcheck-0.0.1-SNAPSHOT.jar
+java -jar build/libs/wordcheck-0.0.1-SNAPSHOT.jar
 ```
 
 **Testes do endpoint**
