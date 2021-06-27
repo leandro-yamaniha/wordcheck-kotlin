@@ -138,7 +138,6 @@ Foi incluido no projeto :
 - jacoo para medir cobertura, além da trava de cobertura minima de 90%, além do relatório de coverage
 - apache pmd para analise de código
 - foi utilizado sonarqube, através da imagem docker, acessado via : 
-
 docker-compose up -d. Neste caso é necessário ter o docker instalado.
 
 
