@@ -28,8 +28,7 @@ public class ApiControllerAdvice {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(HttpMessageNotReadableException::class)
-    fun handleHttpMessageNotReadableException(
-        e: HttpMessageNotReadableException): ErrorDto {
+    fun handleHttpMessageNotReadableException(): ErrorDto {
         val errors: MutableMap<String, String?> = HashMap()
         errors.put("message","Malformed request body")
         return ErrorDto(errors)
