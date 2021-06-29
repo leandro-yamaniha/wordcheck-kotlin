@@ -15,7 +15,8 @@ class SpecialCharacterValidationRuleTest {
     fun whenIsValid(character:Char) = Assertions.assertTrue(validationRule.isValid(character))
 
     @ParameterizedTest(name = "{0} is not valid")
-    @ValueSource(chars = ['a','b','0','C','D','E','f','g','h','I','J','K','L','n','0','2','3','t','u','v','x','w','z',' '])
+    @ValueSource(chars = ['a','b','0','C','D','E','f','g','h','I','J','K','L',
+        'n','0','2','3','t','u','v','x','w','z',' '])
     fun whenIsInValid(character:Char) = Assertions.assertFalse(validationRule.isValid(character))
 
 }

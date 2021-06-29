@@ -19,7 +19,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
 
 @SpringBootTest
-class ValidateControllerTest {
+class ValidatePasswordControllerTest {
     private val POST_VALIDATE_PASSWORD_ENDPOINT: String = ValidatePasswordController.BASE_ENDPOINT
         .plus(ValidatePasswordController.POST_VALIDATE_PASSWORD)
 

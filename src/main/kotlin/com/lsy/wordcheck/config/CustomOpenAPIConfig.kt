@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 
 @Configuration
-class OpenAPIConfig {
+class CustomOpenAPIConfig {
     @Bean
     fun customOpenAPI(
         @Value("\${info.build.version}") appVersion: String?,
