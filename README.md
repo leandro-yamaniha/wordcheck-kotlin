@@ -134,9 +134,9 @@ curl -X POST "http://localhost:8080/validate/password" -H  "accept: */*" -H  "Co
 # Outras informações
 
 Foi incluido no projeto : 
-- check style
 - jacoo para medir cobertura, além da trava de cobertura minima de 90%, além do relatório de coverage
-- apache pmd para analise de código
+- lint detekt
+- archtest
 - foi utilizado sonarqube, através da imagem docker, acessado via : 
 docker-compose up -d. Neste caso é necessário ter o docker instalado.
 
